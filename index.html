@@ -1,40 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Number Guessing Game</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="container">
-    <h1>🎯 Number Guessing Game</h1>
+  <div class="card">
+    <h1>🎯 Guess the Number</h1>
+    <p class="subtitle" id="rangeText">Choose a max number to start</p>
 
-    <p class="desc">
-      This is a JavaScript-based number guessing game.<br>
-      The game uses <b>prompt()</b> and <b>console</b>.
-    </p>
+    <!-- Setup -->
+    <div id="setup">
+      <input type="number" id="maxInput" placeholder="Enter maximum number">
+      <button onclick="startGame()">Start Game</button>
+    </div>
 
-    <ul>
-      <li>Enter the maximum number</li>
-      <li>Try guessing the random number</li>
-      <li>Type <b>quit</b> to exit the game</li>
-    </ul>
+    <!-- Game -->
+    <div id="game" class="hidden">
+      <input type="number" id="guessInput" placeholder="Enter your guess">
+      <button onclick="checkGuess()">Check Guess</button>
 
-    <button onclick="startGame()">Start Game</button>
+      <p id="message"></p>
+      <p id="attempts">Attempts: 0</p>
 
-    <p class="note">
-      👉 Open <b>DevTools → Console</b> to see messages
-    </p>
+      <button id="playAgainBtn" class="hidden" onclick="playAgain()">
+        🔄 Play Again
+      </button>
+    </div>
   </div>
 
   <script src="script.js"></script>
-  <script>
-    function startGame() {
-      // calls your existing JS code
-    }
-  </script>
-
 </body>
 </html>
+
